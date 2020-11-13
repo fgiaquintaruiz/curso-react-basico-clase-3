@@ -1,23 +1,23 @@
 import React from 'react';
-import Contador from "./containers/ContadorContainer";
-import Incrementador from './containers/IncrementadorContainer';
-import Decrementador from './containers/DecrementadorContainer';
-import globalStore from './stores/store';
-import { Provider } from 'react-redux';
+import ContadorFunc from './components/ContadorFunc.js';
+import IncFunc from './components/IncFunc.js';
+import DecFunc from './components/DecFunc.js';
 
-function App() {
+const styles = {
+  container: {
+    width: '500px',
+    margin: '0 auto'
+  }
+};
+
+const App = () => {
   return (
-    <Provider store={globalStore}>
-    <div className="App">
-      
-      <Contador></Contador>
-      <div>
-      <Incrementador></Incrementador>
-      <Decrementador></Decrementador>
+    <div style={styles.container}>
+      <ContadorFunc></ContadorFunc>
+      <IncFunc></IncFunc>
+      <DecFunc></DecFunc>
     </div>
-    </div>
-    </Provider>
   );
-}
+};
 
 export default App;
